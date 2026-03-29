@@ -49,21 +49,13 @@ export default function Home() {
           <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
             Send
           </Button>
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Add money
+          <Button size="sm" className="bg-secondary text-primary-foreground hover:bg-primary/90">
+            Add Money
           </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button size="sm" variant="outline" className="gap-1">
-                Request
-                <ChevronDown className="size-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              <DropdownMenuItem>Request from bank account</DropdownMenuItem>
-              <DropdownMenuItem>Request from card</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Button size="sm" className="bg-secondary text-primary-foreground hover:bg-primary/90">
+            Request
+          </Button>
+          
         </div>
       </section>
 
