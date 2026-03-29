@@ -33,7 +33,7 @@ export function AppSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild isActive>
-                  <Link href="/" className="flex items-center gap-3">
+                  <Link href="/home" className="flex items-center gap-3">
                     <Home className="size-4" />
                     <span>Home</span>
                   </Link>
@@ -41,7 +41,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/" className="flex items-center gap-3">
+                  <Link href="/cards" className="flex items-center gap-3">
                     <CreditCard className="size-4" />
                     <span>Cards</span>
                   </Link>
@@ -49,7 +49,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/" className="flex items-center gap-3">
+                  <Link href="/transactions" className="flex items-center gap-3">
                     <List className="size-4" />
                     <span>Transactions</span>
                   </Link>
@@ -57,7 +57,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/" className="flex items-center gap-3">
+                  <Link href="/payments" className="flex items-center gap-3">
                     <ArrowLeftRight className="size-4" />
                     <span>Payments</span>
                   </Link>
@@ -65,7 +65,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/" className="flex items-center gap-3">
+                  <Link href="/recipients" className="flex items-center gap-3">
                     <Users className="size-4" />
                     <span>Recipients</span>
                   </Link>
@@ -73,7 +73,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/" className="flex items-center gap-3">
+                  <Link href="/insights" className="flex items-center gap-3">
                     <BarChart3 className="size-4" />
                     <span>Insights</span>
                   </Link>
