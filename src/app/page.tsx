@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import {
   Card,
   CardContent,
@@ -13,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { ArrowUpCircle, PlusCircle, ChevronDown } from "lucide-react"
+import { flagsByCurrencyCode } from "@/assets/flags"
 
 /**
  * DESIGNER NOTE: Wise-style dashboard — layout and structure only.
@@ -26,10 +28,10 @@ import { ArrowUpCircle, PlusCircle, ChevronDown } from "lucide-react"
  */
 
 const CURRENCY_ACCOUNTS = [
-  { code: "EUR", label: "EUR", accountId: "51568", balance: "1.00", flag: "🇪🇺" },
-  { code: "AUD", label: "AUD", accountId: "30779", balance: "0.00", flag: "🇦🇺" },
-  { code: "CAD", label: "CAD", accountId: "15376", balance: "0.00", flag: "🇨🇦" },
-  { code: "GBP", label: "GBP", accountId: "13159", balance: "0.00", flag: "🇬🇧" },
+  { code: "EUR", label: "EUR", accountId: "51568", balance: "1.00" },
+  { code: "AUD", label: "AUD", accountId: "30779", balance: "0.00" },
+  { code: "CAD", label: "CAD", accountId: "15376", balance: "0.00" },
+  { code: "GBP", label: "GBP", accountId: "13159", balance: "0.00" },
 ]
 
 const RECENT_TRANSACTIONS = [
@@ -43,16 +45,17 @@ export default function Home() {
     <div className="flex flex-1 flex-col gap-8 p-6">
       {/* Total balance + actions */}
       <section className="space-y-4">
-        <h2 className="text-sm font-medium text-muted-foreground">Total balance</h2>
-        <p className="text-3xl font-bold tracking-tight">1.00 EUR</p>
+       <div> <p className="text-sm font-medium text-muted-foreground">Total balance</p>
+        <h2 className="text-3xl font-bold tracking-tight">2.00 EUR</h2>
+        </div>
         <div className="flex flex-wrap gap-2">
           <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
             Send
           </Button>
-          <Button size="sm" className="bg-secondary text-primary-foreground hover:bg-primary/90">
+          <Button size="sm" className="bg-secondary text-secondary-foreground hover:bg-primary/80">
             Add Money
           </Button>
-          <Button size="sm" className="bg-secondary text-primary-foreground hover:bg-primary/90">
+          <Button size="sm" className="bg-secondary text-secondary-foreground hover:bg-primary/80">
             Request
           </Button>
           
@@ -60,19 +63,34 @@ export default function Home() {
       </section>
 
       {/* Currency account cards */}
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {CURRENCY_ACCOUNTS.map((account) => (
-          <Card key={account.code} className="bg-muted/50">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <span className="text-lg" aria-hidden>{account.flag}</span>
-              <CardTitle className="text-base font-medium">{account.label}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-1">
-              <p className="text-xs text-muted-foreground">Account - {account.accountId}</p>
-              <p className="text-2xl font-bold">{account.balance}</p>
-            </CardContent>
-          </Card>
-        ))}
+      <section className="overflow-x-auto">
+        <div className="flex w-max gap-3">
+          {CURRENCY_ACCOUNTS.map((account) => (
+            <Card
+              key={account.code}
+              className="flex-none w-[256px] h-[206px] bg-muted/50"
+            >
+              <CardHeader className="flex flex-row items-start justify-start space-y-0 pb-2">
+                <Image
+                  src={flagsByCurrencyCode[account.code].src}
+                  alt={flagsByCurrencyCode[account.code].alt}
+                  width={32}
+                  height={32}
+                  className="size-8"
+                />
+                <CardTitle className="text-base font-medium">
+                  {account.label}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-1 mt-auto">
+                <p className="text-xs text-muted-foreground">
+                  Account - {account.accountId}
+                </p>
+                <p className="text-2xl font-bold">{account.balance}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </section>
 
       {/* Recent transactions */}
@@ -81,7 +99,7 @@ export default function Home() {
           <h2 className="text-lg font-semibold">Transactions</h2>
           <Link
             href="/"
-            className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+            className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline"
           >
             See all
           </Link>
@@ -99,7 +117,7 @@ export default function Home() {
                   <p className="text-xs text-muted-foreground">{tx.subAmount}</p>
                 )}
               </div>
-              <p className={`shrink-0 text-right font-medium ${tx.isCredit ? "text-primary" : ""}`}>
+              <p className={`shrink-0 text-right font-medium ${tx.isCredit ? "text-foreground" : ""}`}>
                 {tx.amount}
               </p>
             </li>

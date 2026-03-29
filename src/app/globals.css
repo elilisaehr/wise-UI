@@ -69,17 +69,19 @@
   --primitive-neutral-200: #ecede8;
   --primitive-green-700: #163300;
   --primitive-green-400: #9ee770;
+  --primitive-green-200: #D6F9CE;
   --primitive-overlay-15: rgba(0, 0, 0, 0.15);
 
   --radius: 0.625rem;
   --background: var(--primitive-white);
+  --background-green-light: var(--primitive-green-200);
   --foreground: var(--primitive-black);
   --card: var(--primitive-white);
   --card-foreground: var(--primitive-black);
   --popover: var(--primitive-white);
   --popover-foreground: var(--primitive-black);
-  --primary: var(--primitive-green-700);
-  --primary-foreground: var(--primitive-white);
+  --primary: var(--primitive-green-400);
+  --primary-foreground: var(--primitive-green-700);
   --secondary: var(--primitive-neutral-200);
   --secondary-foreground: var(--primitive-neutral-900);
   --muted: var(--primitive-neutral-200);
@@ -97,8 +99,8 @@
   --chart-5: var(--primitive-neutral-900);
   --sidebar: var(--primitive-neutral-200);
   --sidebar-foreground: var(--primitive-black);
-  --sidebar-primary: var(--primitive-green-700);
-  --sidebar-primary-foreground: var(--primitive-white);
+  --sidebar-primary: var(--primitive-green-400);
+  --sidebar-primary-foreground: var(--primitive-green-700);
   --sidebar-accent: var(--primitive-neutral-300);
   --sidebar-accent-foreground: var(--primitive-neutral-900);
   --sidebar-border: var(--primitive-neutral-300);
@@ -115,8 +117,8 @@
   --popover-foreground: var(--primitive-white);
   --primary: var(--primitive-green-400);
   --primary-foreground: var(--primitive-green-700);
-  --secondary: var(--primitive-neutral-900);
-  --secondary-foreground: var(--primitive-neutral-200);
+  --secondary: var(--primitive-green-700);
+  --secondary-foreground: var(--primitive-green-400);
   --muted: var(--primitive-neutral-900);
   --muted-foreground: var(--primitive-neutral-500);
   --accent: var(--primitive-neutral-700);
